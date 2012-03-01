@@ -1,0 +1,20 @@
+%9FE IRC%9
+------
+fe-irc-messages.c:
+ "%Ymessage irc op_public%N", SERVER_REC, char *msg, char *nick, char *address, char *target
+ "%Ymessage irc own_wall%N", SERVER_REC, char *msg, char *target
+ "%Ymessage irc own_action%N", SERVER_REC, char *msg, char *target
+ "%Ymessage irc action%N", SERVER_REC, char *msg, char *nick, char *address, char *target
+ "%Ymessage irc own_notice%N", SERVER_REC, char *msg, char *target
+ "%Ymessage irc notice%N", SERVER_REC, char *msg, char *nick, char *address, char *target
+ "%Ymessage irc own_ctcp%N", SERVER_REC, char *cmd, char *data, char *target
+ "%Ymessage irc ctcp%N", SERVER_REC, char *cmd, char *data, char *nick, char *address, char *target
+fe-modes.c:
+ "%Ymessage irc mode%N", SERVER_REC, char *channel, char *nick, char *addr, char *mode
+dcc/fe-dcc-chat-messages.c:
+ "%Ymessage dcc own%N", DCC_REC *dcc, char *msg
+ "%Ymessage dcc own_action%N", DCC_REC *dcc, char *msg
+ "%Ymessage dcc own_ctcp%N", DCC_REC *dcc, char *cmd, char *data
+ "%Ymessage dcc%N", DCC_REC *dcc, char *msg
+ "%Ymessage dcc action%N", DCC_REC *dcc, char *msg
+ "%Ymessage dcc ctcp%N", DCC_REC *dcc, char *cmd, char *data

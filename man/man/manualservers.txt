@@ -1,0 +1,230 @@
+ 5. Servers
+
+ 5.1 Generic
+
+	Irssi is multi-server friendly. You can be connected to multiple
+	different servers, or the same server multiple times. Most of the
+	settings that let you specify the channel, let you also specify IRC
+	network.
+
+	Servers are referenced by a "server tag". If the server is known
+	to belong to some IRC network, the tag is the IRC network's name,
+	like "IRCnet". If the IRC network is unknown, the tag is created
+	from the server's name, like irc.funet.fi -> funet. If the tag
+	already exists, a number is added to the end of it and raised until
+	unused tag is found.
+
+	Quit messages have a small problem if there's already a few
+	commands in server's input command queue. If the server's socket is
+	disconnected immediately after QUIT message is sent, it is possible
+	that the server didn't yet process the quit command and your quit
+	message will be "broken pipe" or something similiar. The right thing
+	to do is to let the server disconnect you, but what if the
+	connection to server is broken and the server never disconnects you?
+	I solved the problem by waiting a few seconds to see if the server
+	disconnects us. If it didn't, force the disconnect. This explains
+	the (a bit annoying) "waiting for servers to close connections"
+	message when quiting Irssi. Most IRC clients just ignore this whole
+	problem, but I hate it if my quit message isn't displayed right.
+
+ 5.2 IRC networks
+
+	Different IRC networks behave a bit differently, and to be as
+	efficient as possible, Irssi needs to know a few things about them
+	or the safe defaults will be used. The default configuration file
+	contains the settings for the biggest IRC networks.
+
+	/NETWORK ADD [-kicks <count>] [-msgs <count>] [-modes <count>]
+	            [-whois <count>] [-cmdspeed <ms>] [-cmdmax <count>]
+	            [-nick <nick>] [-user <user>] [-realname <name>]
+	            [-host <host>] [-autosendcmd <cmd>] <name>
+
+	    -kicks: Maximum number of nicks in one /KICK command
+	    -msgs: Maximum number of nicks in one /MSG command
+	    -modes: Maximum number of mode changes in one /MODE command
+	    -whois: Maximum number of nicks in one /WHOIS command
+	    -cmdspeed: Same as /SET cmd_queue_speed, see section 3.1
+	    -cmdmax: Same as /SET cmd_max_at_once, see section 3.1
+	    -nick, -user, -realname: Specify what nick/user/name to use
+	    -host: Specify what host name to use, if you have multiple
+	    -autosendcmd: Command to send after connecting to a server
+
+	With -autosendcmd argument you can automatically run any commands
+	after connecting to the network. This is useful for automatically 
+	identifying yourself to NickServ, for example
+
+	/NETWORK ADD -autosendcmd "/msg NickServ identify secret" freenode
+
+	/NETWORK REMOVE <name>
+
+ 5.3 Manually connecting and disconnecting
+
+	To connect to a new server, use:
+	/CONNECT [-network <network>] [-host <hostname>] <address>|<network>
+	         [<port> [<password> [<nick>]]]
+
+	If there's no password, set it to -. You can directly connect to
+	IRC server in specified address, or you can connect to some IRC
+	network and Irssi will pick the server for you.
+
+	You don't need to specify the IRC network, password, nick, etc. if
+	you setup the server using /SERVER ADD (see next section). If the
+	settings can't be found there either, Irssi will use the defaults:
+
+	/SET default_nick = <nick>, defaults to user_name
+	/SET alternate_nick = <nick>, defaults to <default_nick>_
+	/SET user_name = <user>, defaults to your login name
+	/SET real_name = <name>, taken from /etc/passwd by default
+	/SET hostname = <host>, what host name to use when connecting
+	/SET skip_motd ON|OFF|TOGGLE - Don't show server's MOTD
+
+	NOTE: /CONNECT is also a command for IRC operators to connect IRC
+	servers to other IRC servers. If you want to use it, use /SCONNECT
+	instead.
+
+	You can disconnect from the server with:
+	/DISCONNECT *|<tag> [message]
+
+	If message isn't given, Irssi will use the default quit message. You
+	can set it with /SET quit_message <message>, default is "leaving".
+
+	/SERVER disconnects the server in active window and connects to new
+	one. It will take the same arguments as /CONNECT. If you prefix the
+	address with + character, Irssi won't disconnect the active server,
+	and it will create a new window where the server is connected
+	(ie. /window new hide;/connect address)
+
+	/SERVER without any arguments displays list of connected servers.
+
+ 5.4 Server settings
+
+	/SERVER ADD [-auto | -noauto] [-network <network>] [-host <hostname>]
+	            [-cmdspeed <ms>] [-cmdmax <count>] [-port <port>]
+	            <address> [<port> [<password>]]
+
+	    -auto: Automatically connect to server at startup
+	    -noauto: Don't connect to server at startup (default)
+	    -network: Specify what IRC network this server belongs to
+	    -ircnet: Same as -network. Deprecated. Do not use.
+	    -host: Specify what host name to use, if you have multiple
+	    -cmdspeed: Same as /SET cmd_queue_speed, see section 3.1
+	    -cmdmax: Same as /SET cmd_max_at_once, see section 3.1
+	    -port: This is pretty much like the port argument later, except
+	           this can be used to modify existing server's port.
+
+	/SERVER REMOVE <address> [<port>]
+
+	/SERVER LIST
+
+	Servers are identified by their name and port. You can have multiple
+	entries for the same server name but in different ports. This is
+	useful for IRC proxies, in one port you could have IRCNet proxy,
+	another port would have EFNet, etc.
+
+	If you wish to change existing server's port to something else, use
+	-port command. For example if you had irc.server.org in port 6667
+	and you wanted to change it to port 6668, use command:
+
+	/SERVER ADD -port 6668 irc.server.org 6667
+
+	If you want to remove some settings from existing server, for
+	example hostname, just give -host "" parameters to it.
+
+	After connected to server, Irssi can automatically change your user
+	mode. You can set it with /SET usermode <mode>, default is +i.
+
+ 5.5 Automatic reconnecting
+
+	If you get disconnected from server, Irssi will try to reconnect
+	back to some of the servers in the same IRC network. To prevent
+	flooding the server that doesn't let you in (and avoiding K-lines),
+	Irssi won't try to reconnect to the same server more often than
+	once in `server_reconnect_time' seconds. You can change it with
+	/SET server_reconnect_time <seconds>, default is 5 minutes.
+
+	After reconnected to server, Irssi will re-set your user mode, away
+	message and will join you back to the same channels where you were
+	before the connection was lost.
+
+	You can see list of the reconnections with /SERVER. The servers
+	that have tag as RECON-n are the reconnections. You can remove them
+	with /DISCONNECT <tag>, and you can reconnect to them immediately
+	with /RECONNECT <n>. /RECONNECT without any arguments will
+	disconnect from the active server and reconnect back immediately.
+
+ 5.6 Server redirections
+
+	Getting replies matched to IRC commands can be quite complicated.
+	Server redirection allow this in a relatively easy way. They are
+	used internally and are available to scripts; see Server redirections
+	in perl.txt for details.
+
+ 5.7 Server idle command queue
+
+	There's some situations when you want to ask something from the
+	server which isn't really important. For example when connected
+	to server and you didn't get your nick, Irssi asks with /WHOIS
+	who has your nick and displays it. But if you already have a lot of
+	commands in buffer, like you just autojoined to many channels,
+	you'd rather first let the JOIN commands to be sent to server
+
+	This is where server idle queue gets into picture. Commands in
+	idle queue are sent to server when there's nothing else in the
+	normal command queue.
+
+	Idle queue works with server redirections, so you can ask something
+	from server when it has time and your function is called when the
+	reply is received.
+
+ 5.8 Net splits
+
+	Irssi keeps track of people who were lost in net splits. You can
+	get a list of them with /NETSPLIT command.
+
+	Another use for this is with bots. Channel master can op anyone in
+	the channel and the bot happily accepts it. But if the opped user
+	is lost behind a net split and in netjoin the server gives ops for
+	the user, the bot should decide if the user (who isn't in bot's user
+	database) is a malicious attacker who should be deopped, or if
+	he/she/it is just some user that already had ops before the net
+	split.
+
+	/SET hide_netsplit_quits - If ON, hide all netsplit quit messages
+	     and display only "Netsplit host1 host2: nicks".
+
+	/SET netsplit_max_nicks - If non-zero, limit the number of nicks
+	     printed in netsplit message and add "(+<n> more, use /NETSPLIT
+	     to show all of them)" text.
+
+ 5.9 Lag checking
+
+	Irssi will constantly check how big the lag to the server is. It is
+	done by sending PING commands. Lag checking is disabled for broken
+	servers that do not support PING.
+
+	If the lag is too big, Irssi will reconnect to different IRC server.
+	This is sometimes useful if the connection has been stuck for 30
+	minutes but it still hasn't been closed.
+
+	/SET lag_check_time <time> - Specifies how often to check the lag.
+	     If it is set to 0, the lag detection is disabled. Default
+	     is 1 minute.
+	/SET lag_max_before_disconnect <time> - Specifies how big the lag
+	     can be before reconnecting to another server. Default is 5
+	     minutes.
+	/SET lag_min_show <time> - Specifies the minimum lag to display
+	     in status bar. Default is 1 second.
+
+ 5.10 Raw log
+
+	All data that is received or sent to server is kept in a raw log
+	buffer for a while. Also event redirections are kept there. This is
+	very useful for debugging purposes.
+
+	/RAWLOG SAVE <filename> - Save the current raw log buffer to file
+	/RAWLOG OPEN <filename> - Like /RAWLOG SAVE, but keep the log file
+	                          open and write all new log to it.
+	/RAWLOG CLOSE - Close the open raw log
+
+	/SET rawlog_lines <count> - Specify the number of raw log lines to
+	                            keep in memory.

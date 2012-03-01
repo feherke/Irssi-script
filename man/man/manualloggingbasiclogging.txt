@@ -1,0 +1,41 @@
+11.1 %9Basic logging%9
+
+  /%wLOG%N %9OPEN%9 [%9-noopen%9] [%9-autoopen%9] [%9-targets%9 <targets>] [%9-window%9] <filename>
+    [<levels>]
+
+    %9-noopen%9: Create the entry to log list, but don't start logging
+    %9-autoopen%9: Automatically open this log file at startup
+    %9-targets%9: Log only in specified channels/nicks
+    %9-window%9: Log the active window
+    <filename>: File name where to log, it is parsed with strftime(), so
+      %%d=day, etc. see "man strftime" for more info. Irssi will automatically
+      check every hour if log should be rotated.
+    <levels>: Defaults to %9ALL%9
+
+  /%wLOG%N %9CLOSE%9 <ref#> | <fname> - Close log and remove from log list
+  /%wLOG%N %9START%9 <ref#> | <fname> - Start logging to file
+  /%wLOG%N %9STOP%9 <ref#> | <fname> - Stop logging to file
+  /%wLOG%N without any arguments displays the log list
+
+  /%wSET%N %clog_create_mode%N <mode> - Specifies what file mode to use with the
+    created log files. Default is 0644.
+
+All of these are parsed with strftime():
+  /%wSET%N %clog_timestamp%N <text> - Specifies the time stamp format. Default is
+    "%%H:%%M ".
+  /%wSET%N %clog_open_string%N <text> - Text written to log when it's opened
+  /%wSET%N %clog_close_string%N <text> - Text written to log when it's closed
+  /%wSET%N %clog_day_changed%N <text> - Text written to log when day changes
+
+NOTE: Log files are locked after opened, so two Irssis can't accidentally try
+to write to the same log file.
+
+Examples:
+
+  /%wLOG%N %9OPEN%9 -targets cras ~/irclogs/cras.log %9MSGS%9
+    - Logs all messages from/to nick `cras'
+
+  /%wLOG%N %9OPEN%9 -targets #linux ~/irclogs/linux/linux-%%Y-%%m-%%d
+    - Logs all messages in channel #linux. Log is rotated daily, so logs in 1.
+    May 2000 goes to file "linux-2000-05-01", when the day is changed, Irssi
+    closes the log and starts logging to "linux-2000-05-02" etc.

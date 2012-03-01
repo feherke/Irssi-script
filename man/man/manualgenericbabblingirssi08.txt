@@ -1,0 +1,10 @@
+0.2 %9Irssi 0.8%9
+
+Irssi 0.8 is my fourth try to create the perfect IRC client. This time I'm
+concentrating to the code. I try to avoid kludges, I try to make as simple code
+as I can, and I try to provide enough easy to use functions so that extending
+Irssi is as simple as possible. I also try to keep the "bloat" features in
+scripts or modules instead of build-in.
+
+I think I'm succeeded with these goals pretty well, there's some small problems
+but everything in the big picture looks great.

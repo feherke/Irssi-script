@@ -1,0 +1,7 @@
+0.4 %9This documentation%9
+
+Strange, I just created the index list and started writing this. I've never
+been too good at documentation and I usually don't like writing it, but after
+coding so much recently and seeing that the NEWS file was getting *SO* large, I
+thought that I had to put all these features down somewhere so people (and me!)
+would find them.

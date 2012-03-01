@@ -1,0 +1,9 @@
+         black   red     green   yellow  blue   magenta  cyan    white  
+black   %0 %k%%k %K%%K %N %0 %r%%r %R%%R %N %0 %g%%g %G%%G %N %0 %y%%y %Y%%Y %N %0 %b%%b %B%%B %N %0 %m%%m %M%%M %N %0 %c%%c %C%%C %N %0 %w%%w %W%%W %N %%0
+red     %1 %k%%k %K%%K %N %1 %r%%r %R%%R %N %1 %g%%g %G%%G %N %1 %y%%y %Y%%Y %N %1 %b%%b %B%%B %N %1 %m%%m %M%%M %N %1 %c%%c %C%%C %N %1 %w%%w %W%%W %N %%1
+green   %2 %k%%k %K%%K %N %2 %r%%r %R%%R %N %2 %g%%g %G%%G %N %2 %y%%y %Y%%Y %N %2 %b%%b %B%%B %N %2 %m%%m %M%%M %N %2 %c%%c %C%%C %N %2 %w%%w %W%%W %N %%2
+yellow  %3 %k%%k %K%%K %N %3 %r%%r %R%%R %N %3 %g%%g %G%%G %N %3 %y%%y %Y%%Y %N %3 %b%%b %B%%B %N %3 %m%%m %M%%M %N %3 %c%%c %C%%C %N %3 %w%%w %W%%W %N %%3
+blue    %4 %k%%k %K%%K %N %4 %r%%r %R%%R %N %4 %g%%g %G%%G %N %4 %y%%y %Y%%Y %N %4 %b%%b %B%%B %N %4 %m%%m %M%%M %N %4 %c%%c %C%%C %N %4 %w%%w %W%%W %N %%4
+magenta %5 %k%%k %K%%K %N %5 %r%%r %R%%R %N %5 %g%%g %G%%G %N %5 %y%%y %Y%%Y %N %5 %b%%b %B%%B %N %5 %m%%m %M%%M %N %5 %c%%c %C%%C %N %5 %w%%w %W%%W %N %%5
+cyan    %6 %k%%k %K%%K %N %6 %r%%r %R%%R %N %6 %g%%g %G%%G %N %6 %y%%y %Y%%Y %N %6 %b%%b %B%%B %N %6 %m%%m %M%%M %N %6 %c%%c %C%%C %N %6 %w%%w %W%%W %N %%6
+white   %7 %k%%k %K%%K %N %7 %r%%r %R%%R %N %7 %g%%g %G%%G %N %7 %y%%y %Y%%Y %N %7 %b%%b %B%%B %N %7 %m%%m %M%%M %N %7 %c%%c %C%%C %N %7 %w%%w %W%%W %N %%7

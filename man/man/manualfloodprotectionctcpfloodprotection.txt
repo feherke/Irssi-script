@@ -1,0 +1,13 @@
+3.2 %9CTCP flood protection%9
+
+Other people can pretty easily flood you with CTCP requests, and even if you
+wouldn't get kicked out from the server, they could easily grow your command
+queue. So, Irssi's CTCP flood protection works like this:
+
+First it checks how big the CTCP reply queue is, if it's longer than
+`%cmax_ctcp_queue%N', the CTCP is ignored. You can change it with
+/%wSET%N %cmax_ctcp_queue%N <count> (default is 5).
+
+After this the CTCP reply is placed to server's "idle queue", so the reply is
+sent "when there's extra time", this means that if you are busy sending other
+commands, it might take a while before the reply is sent.

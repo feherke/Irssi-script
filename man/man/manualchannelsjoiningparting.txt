@@ -1,0 +1,36 @@
+6.2 %9Joining, parting%9
+
+Channels can be joined with /%wJOIN%N command. You can join to multiple channels
+with one /%wJOIN%N by giving it a comma-separated list of channels, like
+/%wJOIN%N #channel1,#channel2. If you don't give the channel mode character (%9#+&!%9)
+before the channel name, Irssi automatically uses #channels.
+
+Channel names may contain any characters except SPACE, BELL, NUL, CR, LF or
+comma ('%9,%9'). On IRCnet and a few other networks, you can also restrict the
+channel to only certain servers by adding the mask to the end of the channel
+name separated with a '%9:%9' character, for example #channel:*.fi lets only people
+on .fi servers join the channel. Other servers will not even know about the
+channel. This is pretty difficult to use, since everyone will have to always
+join #channel:*.fi; #channel and #channel:*.fi are different channels. Ban
+exceptions (%m+e%N) and especially invite lists (%m+I%N) replace this functionality
+pretty well, see section 6.5.
+
+If channel has a password (aka. key), you can join it with /%wJOIN%N #channel pass,
+or multiple channels with passwords with
+
+  /%wJOIN%N #secret1,#public,#secret2 pass1,x,pass2
+
+#public didn't have any password, so we used "x" as it's password. It doesn't
+really matter what password you send with channels that don't have passwords.
+
+If you want to join to channel in different server than active one in window,
+you can do it with /%wJOIN%N -<server tag> #channel, like /%wJOIN%N -efnet #irssi.
+
+You can leave channels with /%wPART%N [<channels>] [<part message>]. For example
+"/%wPART%N byebye all" leaves the active channel with "byebye all" message, or
+/%wPART%N #chan1,#chan2 leaves those channels.
+
+NOTE: Sending %wJOIN%N 0 directly to server (/%Wquote%N join 0) leaves all the channels
+you are joined. There's been some jokes about joining for example to #2000,0
+where the server actually leaves you from all channels. With Irssi this isn't
+really a problem, since irssi would happily join to channels #2000 and #0.

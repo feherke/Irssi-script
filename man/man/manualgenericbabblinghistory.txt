@@ -1,0 +1,58 @@
+0.1 %9History%9
+
+Hello. I'm Timo Sirainen aka. cras, and I'm an IRC addict. :)
+
+I'm actually quite new in IRC, I got my first internet connection sometimes
+around fall 1997 and I started actively IRCing around christmas. I used EPIC
+and BitchX mostly at the start, but soon found some nice KDE IRC client which
+name I can't remember anymore. It's author however stopped developing it after
+I had been using it a few months. And since it had bugs and all, I wanted
+another nice GUI IRC client. I didn't find any.
+
+Since I've always been a coder and do-it-yourself guy (my own offline reader
+and BBS software in the BBS ages), I started my own IRC client at spring 1998.
+I called it yagIRC standing for "Yet another GTK IRC client". GTK was in around
+version 1.0 back then, and it had a lot of features/bugs which I found all the
+time as I tried to do some "different" things than other people. These
+sometimes prevented me of doing something some feature I wanted.
+
+So, in summer 1998 I went to army and I passed development of yagIRC to two
+guys, they did a few new features and released a version or two, but finally
+(in summer 1999?) they put a message to web page which told that they finally
+had stopped developing it entirely, also saying that my code was a total mess
+:) (yes, it was a mess)
+
+I got out of the army 1.1.1999. I promised to myself that I wouldn't do another
+IRC client, but after trying to use BitchX a while, I started dreaming about an
+IRC client which would have an excellent look and feel. After trying various
+things, I only came up with the GNOME panel applet which people still tell me
+that it's a great feature. I was more like thinking some pretty little icons in
+some corner telling me about new messages and other stuff..
+
+I thought that I would keep Irssi a small project, just doing a few little
+features that *I* wanted, nothing for others. But after few versions and few
+interested people, I started coding it more and more generic..
+
+Finally, after releasing version 0.6.0 (february, 1999) I realized that things
+were getting into a big mess again. I started a rewrite, I organized the code
+into irc-base, irc-extra, user interface and GUI directories, created the
+signalling system for letting them communicate themselves easily and released
+0.7.0. This was the base for the rest of the 0.7.x releases, and it did work
+pretty well. The signalling system was excellent, for example creating text
+mode version was really easy and you didn't need tens of (empty) gui_xxx()
+functions like in the yagIRC days. Maintaining the text and GTK versions
+separately was really easy too.
+
+About a year later after releasing Irssi 0.7.0, I started having dreams about
+an IRC client that would be extremely modular, like you could upgrade the
+client to newer version ON THE FLY without needingto even disconnect from the
+servers. I started a project codenamed i2k, I took the code from Irssi, split
+it into more directories and changed quite a lot of the code to work a bit
+differently.
+
+I developed i2k quite a long, until I finally gave up with it since it could do
+only some basic things, and Irssi 0.7 really needed maintaining. After a while
+I got an idea, maybe I could merge the code from the i2k to Irssi more easily
+than rewriting the whole client. This was more easier than I thought. It's now
+been two months since I started it, and Irssi 0.8 is looking absolutely
+excellent.

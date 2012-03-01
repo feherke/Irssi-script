@@ -1,0 +1,10 @@
+10.2 %9Automatic ignoring%9
+
+Irssi can automatically set ignores for people who flood you. Currently you can
+autoignore %9MSGS%9, %9NOTICES%9, %9CTCPS%9 and %9PUBLIC%9. Actions are placed to either %9MSGS%9
+or %9PUBLIC%9. See section 3.3 for definition of the flood.
+
+/%wSET%N %cautoignore_time%N <seconds> specifies how long to ignore the user.
+
+/%wSET%N %cautoignore_levels%N <levels> specifies what levels to ignore automatically,
+default is to ignore only CTCPS.

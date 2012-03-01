@@ -1,0 +1,16 @@
+11.2 %9Window logging%9
+
+  /%wWINDOW%N %9LOG%9 %9ON%9|%9OFF%9|%9TOGGLE%9 [<filename>]
+
+Start/stop logging the active window. This works exactly like
+/%wLOG%N %9OPEN%9 %9-window%9.
+
+  /%wWINDOW%N %9LOGFILE%9 <filename>
+
+Sets the default log file to use in the window, it can be overridden with
+specifying the file name in /%wWINDOW%N %9LOG%9. If no file
+name isn't given, Irssi defaults to ~/irc.log.<windowname> or
+~/irc.log.Window<ref#> if window doesn't have name.
+
+Creates the entry to log list, same as /%wLOG%N %9OPEN%9 %9-window%9 %9-noopen%9.
+Also, if /%wWINDOW%N %9LOG%9 %9ON%9 is used it starts logging to this file.

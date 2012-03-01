@@ -1,0 +1,21 @@
+8. %9Notify list%9
+
+Notify list is generally used for knowing when someone you know comes to IRC or
+leaves from IRC. Traditionally notify list can handle only a list of nicks, no
+nick masks etc. I lost interest to traditional notify lists long time ago,
+since the people I know are in IRC all the time. So I made a bit more
+featureful notify list:
+
+  /%wNOTIFY%N [%9-list%9] [%9-away%9] [%9-idle%9 [minutes]] <mask> [network [network...]]
+
+    %9-away%9: Notifies about away-status changes
+    %9-idle%9: Notifies if idle time is first larger than <minutes> (default is
+      hour) and then it drops down.
+    %9-list%9: Lists the notify list entries with all their settings
+    <mask>: Either a simple "nick" or "nick!*@*blah.org". The nick can't
+      contain wildcards, but the user/host can.
+
+  /%wUNNOTIFY%N <mask>
+
+/%wNOTIFY%N without any arguments displays if the people in notify list are online
+or offline.

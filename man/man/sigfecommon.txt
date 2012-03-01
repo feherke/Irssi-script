@@ -1,0 +1,56 @@
+%9FE common%9
+---------
+* %9Requires to work properly%9:
+ "%Ygui print text%N", WINDOW_REC, int fg, int bg, int flags, char *text, TEXT_DEST_REC
+(Can be used to determine when all "gui print text"s are sent (not required))
+ "%Ygui print text finished", WINDOW_REC
+* %9Provides signals%9:
+completion.c:
+ "%Ycomplete word%N", GList * of char*, WINDOW_REC, char *word, char *linestart, int *want_space
+fe-common-core.c:
+ "%Yirssi init read settings%N"
+fe-exec.c:
+ "%Yexec new%N", PROCESS_REC
+ "%Yexec remove%N", PROCESS_REC, int status
+ "%Yexec input%N", PROCESS_REC, char *text
+fe-messages.c:
+ "%Ymessage public%N", SERVER_REC, char *msg, char *nick, char *address, char *target
+ "%Ymessage private%N", SERVER_REC, char *msg, char *nick, char *address
+ "%Ymessage own_public%N", SERVER_REC, char *msg, char *target
+ "%Ymessage own_private%N", SERVER_REC, char *msg, char *target, char *orig_target
+ "%Ymessage join%N", SERVER_REC, char *channel, char *nick, char *address
+ "%Ymessage part%N", SERVER_REC, char *channel, char *nick, char *address, char *reason
+ "%Ymessage quit%N", SERVER_REC, char *nick, char *address, char *reason
+ "%Ymessage kick%N", SERVER_REC, char *channel, char *nick, char *kicker, char *address, char *reason
+ "%Ymessage nick%N", SERVER_REC, char *newnick, char *oldnick, char *address
+ "%Ymessage own_nick%N", SERVER_REC, char *newnick, char *oldnick, char *address
+ "%Ymessage invite%N", SERVER_REC, char *channel, char *nick, char *address
+ "%Ymessage topic%N", SERVER_REC, char *channel, char *topic, char *nick, char *address
+keyboard.c:
+ "%Ykeyinfo created%N", KEYINFO_REC
+ "%Ykeyinfo destroyed%N", KEYINFO_REC
+printtext.c:
+ "%Yprint text%N", TEXT_DEST_REC *dest, char *text, char *stripped
+themes.c:
+ "%Ytheme created%N", THEME_REC
+ "%Ytheme destroyed%N", THEME_REC
+window-activity.c:
+ "%Ywindow hilight%N", WINDOW_REC
+ "%Ywindow activity%N", WINDOW_REC, int old_level
+ "%Ywindow item hilight%N", WI_ITEM_REC
+ "%Ywindow item activity%N", WI_ITEM_REC, int old_lvel
+window-items.c:
+ "%Ywindow item new%N", WINDOW_REC, WI_ITEM_REC
+ "%Ywindow item remove%N", WINDOW_REC, WI_ITEM_REC
+ "%Ywindow item changed%N", WINDOW_REC, WI_ITEM_REC
+ "%Ywindow item server changed%N", WINDOW_REC, WI_ITEM_REC
+windows.c:
+ "%Ywindow created%N", WINDOW_REC
+ "%Ywindow destroyed%N", WINDOW_REC
+ "%Ywindow changed%N", WINDOW_REC, WINDOW_REC old
+ "%Ywindow changed automatic%N", WINDOW_REC
+ "%Ywindow server changed%N", WINDOW_REC, SERVER_REC
+ "%Ywindow refnum changed%N", WINDOW_REC, int old
+ "%Ywindow name changed%N", WINDOW_REC
+ "%Ywindow history changed%N", WINDOW_REC, char *oldname
+ "%Ywindow level changed%N", WINDOW_REC

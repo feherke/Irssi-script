@@ -1,0 +1,6 @@
+Special Variables and Expandos
+
+%Uvarmodifier%U         modifiers
+%Uvarexpando%U          expandos
+%Uvardynamic%U          dynamic variables
+%Uvarexample%U          examples

@@ -1,0 +1,9 @@
+11.4 %9Awaylog%9
+
+Irssi logs specified messages when you're away. After you set yourself unaway,
+Irssi will display all the messages in the awaylog.
+
+  /%wSET%N %cawaylog_level%N <level> - Default is %9MSGS%9 %9HILIGHT%9
+  /%wSET%N %cawaylog_file%N <filename> - Default is ~/.irssi/away.log
+
+You can disable this feature by setting %cawaylog_level%N to %9NONE%9.

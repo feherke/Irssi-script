@@ -1,0 +1,43 @@
+%9IRC modules%9
+-----------
+* %9Provides signals%9:
+dcc*.c:
+ "%Ydcc ctcp %N"<%Ycmd%N>, char *args, DCC_REC
+ "%Ydefault dcc ctcp%N", char *args, DCC_REC
+ "%Ydcc unknown ctcp%N", char *args, char *sender, char *sendaddr
+ "%Ydcc reply %N"<%Ycmd%N>, char *args, DCC_REC
+ "%Ydefault dcc reply%N", char *args, DCC_REC
+ "%Ydcc unknown reply%N", char *args, char *sender, char *sendaddr
+ "%Ydcc chat message%N", DCC_REC, char *msg
+ "%Ydcc created%N", DCC_REC
+ "%Ydcc destroyed%N", DCC_REC
+ "%Ydcc connected%N", DCC_REC
+ "%Ydcc rejecting%N", DCC_REC
+ "%Ydcc closed%N", DCC_REC
+ "%Ydcc request%N", DCC_REC, char *sendaddr
+ "%Ydcc request send%N", DCC_REC
+ "%Ydcc chat message%N", DCC_REC, char *msg
+ "%Ydcc transfer update%N", DCC_REC
+ "%Ydcc get receive%N", DCC_REC
+ "%Ydcc error connect%N", DCC_REC
+ "%Ydcc error file create%N", DCC_REC, char *filename
+ "%Ydcc error file open%N", char *nick, char *filename, int errno
+ "%Ydcc error get not found%N", char *nick
+ "%Ydcc error send exists%N", char *nick, char *filename
+ "%Ydcc error unknown type%N", char *type
+ "%Ydcc error close not found%N", char *type, char *nick, char *filename
+autoignore.c:
+ "%Yautoignore new%N", SERVER_REC, AUTOIGNORE_REC
+ "%Yautoignore remove%N", SERVER_REC, AUTOIGNORE_REC
+flood.c:
+ "%Yflood%N", SERVER_REC, char *nick, char *host, int level, char *target
+notifylist.c:
+ "%Ynotifylist new%N", NOTIFYLIST_REC
+ "%Ynotifylist remove%N", NOTIFYLIST_REC
+ "%Ynotifylist joined%N", SERVER_REC, char *nick, char *user, char *host, char *realname, char *awaymsg
+ "%Ynotifylist away changed%N", SERVER_REC, char *nick, char *user, char *host, char *realname, char *awaymsg
+ "%Ynotifylist unidle%N", SERVER_REC, char *nick, char *user, char *host, char *realname, char *awaymsg
+ "%Ynotifylist left%N", SERVER_REC, char *nick, char *user, char *host, char *realname, char *awaymsg
+proxy/listen.c:
+ "%Yproxy client connected%N", CLIENT_REC
+ "%Yproxy client disconnected%N", CLIENT_REC

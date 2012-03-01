@@ -1,0 +1,25 @@
+9. %9Text highlighting%9
+
+Irssi supports highlighting lines that match the specified pattern. You can
+also change the color of the nicks that match specified nick mask, so you could
+for example show your friends' nicks with different color.
+
+  /%wHILIGHT%N [%9-mask%9 | %9-regexp%9 | %9-word%9] [%9-nick%9] [%9-color%9 <color>]
+    [%9-level%9 <level>] [%9-channels%9 <channels>] <text>
+
+    %9-mask%9: Match only for nick, <text> is a nick mask
+    %9-regexp%9: <text> is a regular expression
+    %9-word%9: <text> must match to full words
+    %9-nick%9: Hilight only the nick, not the whole line
+    %9-color%9: Print the reply with <color>. color is in %%code format (see
+      docs/formats.txt)
+    %9-level%9: Match only for <level> messages, default is %9publics%9,%9msgs%9,%9notices%9,
+      %9actions%9
+    %9-channels%9: Match only in <channels>
+
+  /%wDEHILIGHT%N <ref#> | <text>
+
+/%wHILIGHT%N without any arguments displays list of the hilights.
+
+If <color> is a number, Irssi will treat it as a MIRC color code. You can also
+use bolds (^B), underlines (^_) etc. as <color> if you like.

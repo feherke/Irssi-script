@@ -1,0 +1,18 @@
+%%k %k black   %n %%K %K dark grey    %n %%0 %0 black   %n
+%%r %r red     %n %%R %R bold red     %n %%1 %1 red     %n
+%%g %g green   %n %%G %G bold green   %n %%2 %2 green   %n
+%%y %y yellow  %n %%Y %Y bold yellow  %n %%3 %3 yellow  %n
+%%b %b blue    %n %%B %B bold blue    %n %%4 %4 blue    %n
+%%m %m magenta %n %%M %M bold magenta %n %%5 %5 magenta %n
+%%c %c cyan    %n %%C %C bold cyan    %n %%6 %6 cyan    %n
+%%w %w white   %n %%W %W bold white   %n %%7 %7 white   %n
+
+%%N Default color ( %%n also )
+%%F Blinking F%on%F/off
+%%U Underline %Uon%U/off
+%%8 Reverse %8on%8/off
+%%9 Bold %9on%9/off ( %%_ also )
+%%: Insert newline
+%%| Marks the indentation position
+%%# Monospace font %#on%#/off
+%% A single %%

@@ -1,0 +1,14 @@
+= Irssi Script
+
+The [[http://irssi.org/|Irssi]] IRC client can be extended with Perl scripts registered to run when events occure or on request.
+A few such scripts can be downloaded from the [[http://scripts.irssi.org/|Irssi site's script page]].
+
+This repository contains a collection of scripts - each directory contains one script and the related files.
+
+Here are some scripts I wrote.
+
+* **BitlBee - Catch Command** - Catch BitlBee commands sent accidentally to other channels.
+* **Man** - Brief Irssi script developer manual.
+* **OSD-C** - OSD display controlled with chained conditions.
+
+These scripts were intentionally kept short. For details see the [[http://feherke.github.com/perl/irssi/|Irssi section of my site]].

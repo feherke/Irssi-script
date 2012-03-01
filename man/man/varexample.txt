@@ -1,0 +1,19 @@
+For example, assume you have the following alias:
+
+   %Walias%N blah msg %9$D%9 Hi there!
+
+If /blah is passed any arguments, they will automatically be appended to the
+%wMSG%N text.  For example:
+
+   /blah oops                          %y/* command as entered */%N
+   "Hi there! oops"                    %y/* text sent to $D */%N
+
+Another useful form is %9${}%9.  In general, variables can be embedded inside
+strings without problems, assuming the surrounding text could not be
+misinterpreted as part of the variable name.  This form guarantees that
+surrounding text will not affect the expression's return value.
+
+   /%Weval%N %Wecho%N foo$Nfoo                 %y/* breaks, looks for $nfoo */%N
+   /%Weval%N %Wecho%N foo%9${N}%9foo               %y/* ${N} returns current nickname */%N
+   fooYourNickfoo                      %y/* returned by above command */%N
+

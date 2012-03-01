@@ -1,0 +1,18 @@
+6.1 %9Generic%9
+
+There's several types of channels you can join, here's a list of the ones that
+Irssi supports:
+
+  %9#channel%9 - Normal channels, most commonly used
+  %9+channel%9 - Modeless channels, channel has no modes, no channel operators and
+    no topic. This way no-one is above others and there's no operator-wars etc.
+    But on the other hand, you can't kick any troublemakers..
+  %9&channel%9 - Local channels, these channels aren't distributed outside the IRC
+    server. IRCNet has replaced server notices with several different &channels
+    (&ERRORS, &NOTICES, etc.)
+  %9!channel%9 - New channels, currently supported only by IRCNet. These channels
+    are designed so that they can't be taken over with net splits. /%wJOIN%N
+    !channel joins to existing !channel, /%wJOIN%N !!channel creates a new channel.
+
+Most of the commands that take channel name as parameter, can also accept * as
+the channel name, which means the active channel.

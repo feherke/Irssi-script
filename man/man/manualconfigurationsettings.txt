@@ -1,0 +1,14 @@
+4.2 %9Settings%9
+
+You can view or change the settings with /%wSET%N command.
+
+  /%wSET%N without any arguments displays all the settings.
+  /%wSET%N <key> displays settings which key (partly) matches <key>
+  /%wSET%N <key> <value> sets <key> to <value>
+
+Boolean settings accepts only values %9ON%9, %9OFF%9 and %9TOGGLE%9. You can also use
+/%wTOGGLE%N command to change them, so /%wTOGGLE%N <key> behaves like
+/%wSET%N <key> %9TOGGLE%9. /%wTOGGLE%N also accepts arguments %9ON%9 and %9OFF%9 when /%wTOGGLE%N
+behaves exactly like /%wSET%N.
+
+Remember that changes are not saved until you use /%wSAVE%N!

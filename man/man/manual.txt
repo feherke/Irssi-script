@@ -1,0 +1,31 @@
+Irssi 0.8 documentation - %B%Uhttp://irssi.org/%U%N
+
+Copyright(c) 2000 Timo Sirainen <%B%Ucras@irssi.org%U%N>
+
+%9Index%9
+
+%Umanualgenericbabbling%U          0. Generic babbling
+%Umanualinstallation%U             1. Installation
+%Umanualmessagelevels%U            2. Message levels
+%Umanualfloodprotection%U          3. Flood protection
+%Umanualconfiguration%U            4. Configuration
+%Umanualservers%U                  5. Servers
+%Umanualchannels%U                 6. Channels
+                               7. IRC commands and features
+%Umanualnotifylist%U               8. Notify list
+%Umanualtexthighlighting%U         9. Text highlighting
+%Umanualignoring%U                10. Ignoring
+%Umanuallogging%U                 11. Logging
+
+                              ( not written yet: )
+                              12. Aliases
+                              13. Themes
+                              14. Last log (currently text version only)
+                              15. Nick and word completion
+                              16. Translation tables
+                              17. Windowing system (text version)
+                              18. Keyboard (text version)
+                              19. Perl scripting
+
+.. no, the docs end here, I got bored of writing these after a few days and 
+haven't touched these since then.

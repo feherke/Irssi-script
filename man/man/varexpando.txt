@@ -1,0 +1,12 @@
+Whenever an alias is called, these expandos are set to the arguments passed
+to it.  If none of these expandos are used in the alias, or the %9$()%9 form
+shown above, any arguments passed will automatically be appended to the last
+command in the alias.
+
+%9Expando%9   %9Description%9
+%Y$*%N        expands to all arguments passed to an alias
+%Y$n%N        expands to argument '%9n%9' passed to an alias (counting from zero)
+%Y$n-m%N      expands to arguments '%9n%9' through '%9m%9' passed to an alias
+%Y$n-%N       expands to all arguments from '%9n%9' on passed to an alias
+%Y$-m%N       expands to all arguments up to '%9m%9' passed to an alias
+%Y$~%N        expands to the last argument passed to an alias

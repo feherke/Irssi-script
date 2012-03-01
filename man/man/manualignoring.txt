@@ -1,0 +1,4 @@
+10. %9Ignoring%9
+
+%Umanualignoringmanualignoring%U       10.1 Manual ignoring
+%Umanualignoringautomaticignoring%U    10.2 Automatic ignoring

@@ -1,0 +1,19 @@
+6.4 %9After-join automation%9
+
+When joined to channel, Irssi asks some information about it. After it has got
+all of it, it prints the "Channel synchronized" text. The following information
+is asked:
+
+ - Channel mode
+ - %wWHO%N list to get nicks' hosts - useful for /%wBAN%N for example
+ - Ban list - useful for allowing /%wUNBAN%N to use wildcards
+
+If you have joined many channels at once, Irssi tries to optimize the commands
+it sends to server. Instead of sending two commands to ask two channels' mode,
+it just sends %wMODE%N #a,#b. Same thing with %wWHO%N list and ban lists. Some
+servers do not support this and they reply with different kinds of error
+messages, Irssi tries to deal with them all right and resend the commands again
+separately. However, some strange servers sometimes use some weird error
+replies that Irssi doesn't know about, and the channel never gets synchronized.
+If this happens with some server you know, please let the Irssi's author know
+about it.

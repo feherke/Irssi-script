@@ -1,0 +1,50 @@
+These variables are set and updated dynamically by the client.  The case of
+%9$A%9 .. %9$Z%9 is important.
+
+%9Variable%9   %9Description%9
+%Y$,%N         last person who sent you a %wMSG%N
+%Y$.%N         last person to whom you sent a %wMSG%N
+%Y$:%N         last person to join a channel you are on
+%Y$;%N         last person to send a public message to a channel you are on
+%Y$A%N         text of your %wAWAY%N message, if any
+%Y$B%N         body of last %wMSG%N you sent
+%Y$C%N         current channel
+%Y$D%N         last person that %wNOTIFY%N detected a signon for
+%Y$E%N         idle time
+%Y$F%N         time client was started, %9$time()%9 format
+%Y$H%N         current server numeric being processed
+%Y$I%N         channel you were last %wINVITE%Nd to
+%Y$J%N         client version text string
+%Y$K%N         current value of %wCMDCHARS%N
+%Y$k%N         first character in %wCMDCHARS%N
+%Y$L%N         current contents of the input line
+%Y$M%N         modes of current channel, if any
+%Y$N%N         current nickname
+%Y$O%N         value of %wSTATUS_OPER%N if you are an irc operator
+%Y$P%N         if you are a channel operator in %9$C%9, expands to a '%9@%9'
+%Y$Q%N         nickname of whomever you are %wQUERY%Ning
+%Y$R%N         version of current server
+%Y$S%N         current server name
+%Y$T%N         target of current input (channel or nick of query)
+%Y$U%N         value of cutbuffer
+%Y$V%N         client release date (format YYYYMMDD)
+%Y$W%N         current working directory
+%Y$X%N         your /userhost %9$N%9 address (user@host)
+%Y$Y%N         value of %wREALNAME%N
+%Y$Z%N         time of day (hh:mm, can be changed with /%wSET%N %ctimestamp_format%N)
+%Y$$%N         a literal '%9$%9'
+
+%Y$versiontime%N         prints time of the irssi version in HHMM format
+%Y$sysname%N             system name (eg. Linux)
+%Y$sysrelease%N          system release (eg. 2.2.18)
+%Y$sysarch%N             system architecture (eg. i686)
+%Y$topic%N               channel topic
+%Y$usermode%N            user mode
+%Y$cumode%N              own channel user mode
+%Y$cumode_space%N        like $cumode, but gives space if there's no mode.
+%Y$tag%N                 server tag
+%Y$chatnet%N             chat network of server
+%Y$winref%N              window reference number
+%Y$winname%N             window name
+%Y$itemname%N            like %9$T%9, but use item's visible_name which may be
+                     different (eg. %9$T%9 = !12345chan, %9$itemname%9 = !chan)

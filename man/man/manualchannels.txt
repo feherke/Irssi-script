@@ -1,0 +1,9 @@
+6. %9Channels%9
+
+%Umanualchannelsgeneric%U              6.1 Generic
+%Umanualchannelsjoiningparting%U       6.2 Joining, parting
+%Umanualchannelsautomaticjoining%U     6.3 Automatic joining
+%Umanualchannelsafterjoinautomation%U  6.4 After-join automation
+%Umanualchannelschannelmodes%U         6.5 Channel modes
+%Umanualchannelsbans%U                 6.6 Bans
+%Umanualchannelsmassjoins%U            6.7 Massjoins

@@ -1,0 +1,118 @@
+   %9FAQ%9
+
+%9Q%9: Why doesn't irssi display colors even when ircii etc. displays them?
+%9A%9: They force ANSI colors even if terminal doesn't support them. By
+   default, irssi uses colors only if terminfo/termcap so says. The
+   correct way to fix this would be to change your %9TERM%9 environment to a
+   value where colors work, like xterm-color or color_xterm (eg.
+   TERM=xterm-color irssi). If this doesn't help, then use the evil way of
+   /%wSET%N %cterm_force_colors%N %9ON%9.
+
+%9Q%9: How do I easily write text to channel that starts with '%9/%9' character?
+%9A%9: / /text
+
+%9Q%9: Why doesn't irssi update my realname (or whatever) after I change it with
+   /%wSET%N %crealname%N and reconnect with /%wRECONNECT%N or /%wSERVER%N?
+%9A%9: Irssi is trying to be too smart. This will be fixed in future, but
+   for now you should use /%wDISCONNECT%N and /%wCONNECT%N.
+
+%9Q%9: I connected to some server which isn't responding but now irssi tries to
+   connect back to it all the time! How can I stop it?
+%9A%9: Two ways. The "good way" to do it is with /%wDISCONNECT%N. Check the
+   server tags first with /%wSERVER%N without giving it any parameters,
+   reconnections are those that have tag starting with "%9recon%9" text. So
+   most probably you're going to do /%wDISCONNECT%N recon-1. The other way is
+   to remove all the reconnections with /%wRMRECONNS%N, easier but may remove
+   some connections you actually wanted to reconnect (if you used multiple
+   servers..).
+
+%9Q%9: How do I add seconds to timestamp?
+%9A%9: /%wFORMAT%N %9timestam%9p {timestamp %%%%H:%%%%M:%%%%S} - and remember to add the
+   trailing space :)
+
+%9Q%9: Why does irssi say "Irssi: Channel not fully synchronized yet, try again
+   after a while" when I try to use /%wBAN%N etc?
+%9A%9: Possibly a bug in irssi, or ircd you're using does something that
+   irssi didn't really notice. The new code should make this happen far
+   less often than before, but one known reason for this is when irssi
+   doesn't notice that you were unable to join some channel. Currently
+   however I don't know of any such events irssi doesn't know about.
+
+   Anyway, if this does happen, do /%wRAWLOG%N %9SAVE%9 ~/rawlog soon after
+   joining to channel, and either try to figure out yourself why irssi
+   didn't get reply to %wWHO%N request, or send the whole log to
+   cras@irssi.org. Note that the rawlog is by default only 200 lines and
+   it may not be enough to show all needed information, so you might want
+   to do /%wSET%N %crawlog_lines%N 1000 or so.
+
+   %wMODE%N %m+b%N still works fine though.
+
+%9Q%9: Where's the GUI version?
+%9A%9: Read %B%Uhttp://irssi.org/?page=about%U%N
+
+%9Q%9: How do I autorejoin channels after being kicked?
+%9A%9: That's evil and you shouldn't do it. If you get kicked, you should
+   stay out, at least until the channel forgot you existed :) Most
+   channels I've joined just ban you if you autorejoin after kick. If
+   you're joined to channels who kick people for fun, try changing
+   channels or something.
+
+   Anyway, if you REALLY want to do that, and you understand that you're
+   doing evilness, you can use the autorejoin.pl script that comes with
+   irssi. You'll still need to specify the channels you wish to rejoin
+   with /%wSET%N %cautorejoin_channels%N #chan1 #chan2 ...
+
+%9Q%9: How do I announce that I'm away/back in all channels I've joined? Or how do
+   I change my nick when setting myself away/back?
+%9A%9: That's even worse than autorejoin. Who could possibly care every
+   time you come and go? Many channels will kick you for using this, and I
+   for example have added several ignores so I'd never need to see these
+   messages. Learn to use /%wAWAY%N command properly and tell its existence to
+   people who don't know about it. /WII yournick shows your away reason
+   much better for people who actually want to know if you're there or
+   not.
+
+%9Q%9: Why does irssi autojoin on invite by default?
+%9A%9: The setting is /%wSET%N %cjoin_auto_chans_on_invite%N - it's not the same as
+   regular %9autojoin-on-invite%9, which irssi doesn't even have. The only
+   channels that are joined on invite, are the ones you've added to config
+   with /%wCHANNEL%N %9ADD%9 %9-auto%9. This is very useful with %9+i%9 channels when you
+   need to first send an invite request to bot, or if you get accidentally
+   kicked from channel, the kicker can invite you back immediately.
+
+   I don't see any bad side effects with this feature, so it's %9ON%9 by
+   default. I guess someone could start kicking/inviting you all the time
+   but server connection shouldn't drop because of that, and you shouldn't
+   join channels whose operators are that evil.
+
+%9Q%9: How to make UTF-8 support work with irssi?
+%9A%9: Make sure your terminal supports UTF-8 (for example, xterm -u8). If
+   you use screen, you may have to do screen -U. And in Irssi do /%wSET%N
+   %cterm_charset%N %9utf-8%9. (for 0.8.9 and older: /%wSET%N %cterm_type%N %9utf-8%9)
+
+%9Q%9: Will there be /DETACH-like feature?
+%9A%9: Maybe. Detach code already is there, attach is just missing :) But I
+   don't have much interest in coding it, screen and dtach can be used to
+   do it just fine.
+
+%9Q%9: How do I run scripts automatically at startup?
+%9A%9: Put them into ~/.irssi/scripts/autorun/ directory. Or better would
+   be if you placed them in ~/.irssi/scripts/ and created symlinks to
+   autorun directory (eg. cd ~/.irssi/scripts/autorun/ ; ln -s
+   ../script.pl .)
+
+%9Q%9: How do I execute commands automatically at startup?
+%9A%9: Put them into ~/.irssi/startup file, each command on its own line.
+   The preceding slash (/) is not necessary.
+
+%9Q%9: How do I easily edit existing topic?
+%9A%9: /%wTOPIC%N <tab>
+
+%9Q%9: How can I have /%wWHOIS%N replies to active window?
+%9A%9: You can disable the status window, or do /%wWINDOW%N %9LEVEL%9 %9-CRAP%9 in it
+   which would also make several other messages show up in active window.
+   You can also use a script.
+
+%9Q%9: How do I add the active network to the statusbar
+%9A%9: Modify the window-line in statusbar section in config file to window
+   = "{sb %9$winref%9:%9$tag%9/%9$T%9{sbmode %9$M%9}}";

@@ -1,0 +1,72 @@
+%9core%9
+----
+* %9Requires to work properly%9:
+ "%Ygui exit%N"
+ "%Ygui dialog%N", char *type, char *text
+ "%Ysend command%N", char *command, SERVER_REC, WI_ITEM_REC
+* %9Provides signals%9:
+chat-protocols.c:
+ "%Ychat protocol created%N", CHAT_PROTOCOL_REC
+ "%Ychat protocol updated%N", CHAT_PROTOCOL_REC
+ "%Ychat protocol destroyed%N", CHAT_PROTOCOL_REC
+channels.c:
+ "%Ychannel created%N", CHANNEL_REC, int automatic
+ "%Ychannel destroyed%N", CHANNEL_REC
+chatnets.c:
+ "%Ychatnet created%N", CHATNET_REC
+ "%Ychatnet destroyed%N", CHATNET_REC
+commands.c:
+ "%Ycommandlist new%N", COMMAND_REC
+ "%Ycommandlist remove%N", COMMAND_REC
+ "%Yerror command%N", int err, char *cmd
+ "%Ysend command%N", char *args, SERVER_REC, WI_ITEM_REC
+ "%Ysend text%N", char *line, SERVER_REC, WI_ITEM_REC
+ "%Ycommand %N"<%Ycmd%N>, char *args, SERVER_REC, WI_ITEM_REC
+ "%Ydefault command%N", char *args, SERVER_REC, WI_ITEM_REC
+ignore.c:
+ "%Yignore created%N", IGNORE_REC
+ "%Yignore destroyed%N", IGNORE_REC
+ "%Yignore changed%N", IGNORE_REC
+log.c:
+ "%Ylog new%N", LOG_REC
+ "%Ylog remove%N", LOG_REC
+ "%Ylog create failed%N", LOG_REC
+ "%Ylog locked%N", LOG_REC
+ "%Ylog started%N", LOG_REC
+ "%Ylog stopped%N", LOG_REC
+ "%Ylog rotated%N", LOG_REC
+ "%Ylog written%N", LOG_REC, char *line
+modules.c:
+ "%Ymodule loaded%N", MODULE_REC, MODULE_FILE_REC
+ "%Ymodule unloaded%N", MODULE_REC, MODULE_FILE_REC
+ "%Ymodule error%N", int error, char *text, char *rootmodule, char *submodule
+nicklist.c:
+ "%Ynicklist new%N", CHANNEL_REC, NICK_REC
+ "%Ynicklist remove%N", CHANNEL_REC, NICK_REC
+ "%Ynicklist changed%N", CHANNEL_REC, NICK_REC, char *old_nick
+ "%Ynicklist host changed%N", CHANNEL_REC, NICK_REC
+ "%Ynicklist gone changed%N", CHANNEL_REC, NICK_REC
+ "%Ynicklist serverop changed%N", CHANNEL_REC, NICK_REC
+pidwait.c:
+ "%Ypidwait%N", int pid, int status
+queries.c:
+ "%Yquery created%N", QUERY_REC, int automatic
+ "%Yquery destroyed%N", QUERY_REC
+ "%Yquery nick changed%N", QUERY_REC, char *orignick
+ "%Ywindow item name changed%N", WI_ITEM_REC
+ "%Yquery address changed%N", QUERY_REC
+ "%Yquery server changed%N", QUERY_REC, SERVER_REC
+rawlog.c:
+ "%Yrawlog%N", RAWLOG_REC, char *data
+server.c:
+ "%Yserver looking%N", SERVER_REC
+ "%Yserver connected%N", SERVER_REC
+ "%Yserver connecting%N", SERVER_REC, ulong *ip
+ "%Yserver connect failed%N", SERVER_REC
+ "%Yserver disconnected%N", SERVER_REC
+ "%Yserver quit%N", SERVER_REC, char *msg
+ "%Yserver sendmsg%N", SERVER_REC, char *target, char *msg, int target_type
+settings.c:
+ "%Ysetup changed%N"
+ "%Ysetup reread%N", char *fname
+ "%Ysetup saved%N", char *fname, int autosaved

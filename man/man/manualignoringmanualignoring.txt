@@ -1,0 +1,29 @@
+10.1 %9Manual ignoring%9
+
+Irssi's ignoring options should be enough for everyone :)
+
+  /%wIGNORE%N [%9-regexp%9 | %9-word%9] [%9-pattern%9 <pattern>] [%9-replies%9] [%9-except%9]
+    [%9-channels%9 <channel>] <mask> <levels> <^levels>
+
+    %9-regexp%9: <pattern> is a regular expression
+    %9-word%9: <pattern> must match to full words
+    %9-pattern%9: <pattern> must match to the message's text
+    %9-replies%9: Ignore replies to nick in channels. For example
+      "/%wIGNORE%N %9-replies%9 *!*@*.fi %9PUBLIC%9" ignores everyone
+      from Finland, but also anyone sending message
+      "tofinnishnick: blahblah".
+    %9-except%9: *DON'T* ignore
+    %9-channels%9: Ignore only in channels
+    <mask>: Either a nick mask or list of channels
+    <levels>: List of levels to ignore
+    <^levels>: List of levels to NOT ignore
+       (/%wignore%N %9-except%9 %9nick%9 %9notices%9 = /%wignore%N %9nick%9 ^%9notices%9)
+
+  /%wUNIGNORE%N <ref#> | <mask>
+
+/%wIGNORE%N without any arguments displays list of ignores.
+
+The best match always wins, so you can have:
+
+  /%wIGNORE%N * %9CTCPS%9
+  /%wIGNORE%N %9-except%9 *!*@host.org %9CTCPS%9

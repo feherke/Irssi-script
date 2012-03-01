@@ -1,0 +1,3 @@
+* Insert numbers after the links then accept them as parameter to display the given page.
+* Add a separate command which parameter compleition to cycle through the previous page's links.
+* Implement apropos and whatis functionality.

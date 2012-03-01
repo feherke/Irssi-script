@@ -1,0 +1,19 @@
+3.3 %9Detecting floods%9
+
+Irssi is all the time automatically checking different flooding, when flood is
+noticed, it sends "%9flood%9" signal. This can be easily used for example to create
+a script for kicking channel flooders. Autoignore uses this also, see section
+10.2.
+
+Flood is detected when more than `%cflood_max_msgs%N' same kind of messages arrives
+in `%cflood_timecheck%N' seconds to same target (channel or private msg) so it
+isn't flooding if same user sends a message to 10 different channels you are
+on, but it is flooding if 10 messages are sent to same channel by the same
+user.
+
+Currently only messages, notices and ctcps are checked for flooding.
+
+  /%wSET%N %cflood_max_msgs%N = <count>, default is 4
+  /%wSET%N %cflood_timecheck%N = <seconds>, default is 5 seconds
+
+If either of these is 0, the flood checking is disabled.

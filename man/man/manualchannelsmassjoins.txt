@@ -1,0 +1,15 @@
+6.7 %9Massjoins%9
+
+Automatic opping the nick right after joined to channel is a pretty commonly
+used. What mostly irritates me with this is that the nick may be opped multiple
+times by different people, or after netsplits when the people join back, the
+server will op them, but still the bots op the people again, even if it was
+just done by the server.
+
+Irssi has this feature that it sends a "%9massjoin%9" signal a while after the real
+join. If someone has already opped the nick, you can easily check it in the
+massjoin signal handler.
+
+The default is to report maximum of 5 joins in one massjoin signal. If the 5
+joins don't come in 5 seconds, the signal is sent anyway. You can change these
+with /%wSET%N %cmassjoin_max_wait%N <milliseconds> and /%wSET%N %cmassjoin_max_joins%N <count>.

@@ -1,0 +1,30 @@
+6.3 %9Automatic joining%9
+
+Irssi can automatically join to specified channels in specified IRC networks.
+It can also automatically send the password when manually joining to channel
+without specifying the password.
+
+  /%wCHANNEL%N %9ADD%9 [%9-auto%9 | %9-noauto%9] [%9-bots%9 <masks>] [%9-botcmd%9 <command>]
+     <channel> <network> [<password>]
+
+With %9-bots%9 and %9-botcmd%9 arguments you can automatically send commands to someone
+in channel. This is useful for automatically getting ops for channels, for
+example
+
+  /%wCHANNEL%N %9ADD%9 %9-auto%9 %9-bots%9 "*!bot@bothost.org bot*!*@host2.org"
+    %9-botcmd%9 "msg $0 op mypass" #channel ircnet
+
+You can also use the %9-botcmd%9 without %9-bots%9 argument. The command is then sent
+whenever you join the channel.
+
+If you want to remove some settings from existing channel record, for example
+bots, just give the %9-bots%9 "" parameters to it. Password can be removed by
+setting it to %9-%9 (or actually, "" works too).
+
+You can remove the channels with
+  /%wCHANNEL%N %9REMOVE%9 <channel> <network>
+
+/%wCHANNEL%N %9LIST%9 displays list of channels with settings.
+
+/%wCHANNEL%N without any arguments displays list of channels you have joined. You
+can also use /%wCHANNEL%N to join to channels just as with /%wJOIN%N, like /%wCHANNEL%N #a.

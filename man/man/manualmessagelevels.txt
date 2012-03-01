@@ -1,0 +1,33 @@
+2. %9Message levels%9
+
+Message levels (or in short, levels) are used almost everywhere. They describe
+what kind of messages we're dealing with. Here's a list of them all:
+
+  %9CRAP%9            - Can be almost anything
+  %9MSGS%9            - Private messages
+  %9PUBLIC%9          - Public messages in channel
+  %9NOTICES%9         - Notices
+  %9SNOTES%9          - Server notices
+  %9CTCPS%9           - CTCP messages
+  %9ACTIONS%9         - Actions (/%wme%N) - usually ORed with %9PUBLIC%9 or %9MSGS%9
+  %9JOINS%9           - Someone joins a channel
+  %9PARTS%9           - Someone parts a channel
+  %9QUITS%9           - Someone quits IRC
+  %9KICKS%9           - Someone gets kicked from channel
+  %9MODES%9           - Channel mode is changed
+  %9TOPICS%9          - Channel topic is changed
+  %9WALLOPS%9         - Wallop is received
+  %9INVITES%9         - Invite is received
+  %9NICKS%9           - Someone changes nick
+  %9DCC%9             - DCC related messages
+  %9DCCMSGS%9         - DCC chat messages
+  %9CLIENTNOTICES%9   - Irssi's notices
+  %9CLIENTERRORS%9    - Irssi's error messages
+  %9CLIENTCRAP%9      - Some other messages from Irssi
+
+And a few special ones that could be included with the levels above:
+
+  %9HILIGHT%9         - Text is highlighted
+  %9NOHILIGHT%9       - Don't check highlighting for this message
+  %9NO_ACT%9          - Don't trigger channel activity when printing this message
+  %9NEVER%9           - Never ignore or log this message

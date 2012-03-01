@@ -1,0 +1,20 @@
+11.3 %9Automatic logging%9
+
+This is the logging method that I had been asked to implement for ages, and it
+is really simple to use too. It logs only messages that have "targets", ie.
+private messages and channel specific messages (msgs, modes, topics, etc).
+%wWHOIS%N replies and such aren't logged. If you with to log them too, use the /%wLOG%N
+command.
+
+So, when for example a private messages comes to you from "guy" nick, Irssi
+creates a log file ~/irclogs/guy.log for it. After few minutes of inactivity,
+the log file is closed.
+
+/%wSET%N %cAUTOLOG%N %9ON%9|%9OFF%9|%9TOGGLE%9 - Enable/disable autolog.
+
+/%wSET%N %cAUTOLOG_LEVEL%N <level> - Specifies what levels to log, default is ALL.
+
+/%wSET%N %cAUTOLOG_PATH%N <path> - expandos (see special_vars.txt) can be used, %9$0%9 is
+the target. If you are using multiple servers, it makes sense to use the server
+tag as part of the file name, for example ~/irclogs/%9$tag%9/%9$0%9.log (this is the
+default). The directories are created automatically.

@@ -1,0 +1,24 @@
+6.6 %9Bans%9
+
+You can give /%wBAN%N a list of nicks or whole ban masks. /%wUNBAN%N accepts wildcards,
+so if you have ban nick!user@reallylonghost.org, you can simply unban it with
+/%wUNBAN%N *really*
+
+Using /%wBAN%N <nicks>, Irssi will automatically create the mask. You can change
+the way it's created with the ban_type setting:
+
+  /%wSET%N %cban_type%N %9normal%9|%9host%9|%9domain%9|%9custom%9
+
+%9Normal%9 - *!user@*.domain.net
+%9Host%9   - *!*@host.domain.net
+%9Domain%9 - *!*@*.domain.net
+%9Custom%9 [nick] [user] [host] [domain]
+
+  eg. /%wSET%N %cban_type%N custom nick domain - nick!*@*.domain.net
+  eg. /%wSET%N %cban_type%N custom user host - *!user@host.domain.net
+
+Irssi has also a couple of commands to help banning people:
+
+  /%wKICKBAN%N [<channel>] <nick> <reason> - ban and kick the nick
+  /%wKNOCKOUT%N [<seconds>] <nick> <reason> - kickban the nick, unban after waiting
+    <seconds>, default is 5 minutes.

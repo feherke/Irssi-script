@@ -1,0 +1,6 @@
+11. %9Logging%9
+
+%Umanualloggingbasiclogging%U     11.1 Basic logging
+%Umanualloggingwindowlogging%U    11.2 Window logging
+%Umanualloggingautomaticlogging%U 11.3 Automatic logging
+%Umanualloggingawaylog%U          11.4 Awaylog

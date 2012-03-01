@@ -1,0 +1,13 @@
+0.0 - ?
+  [+] Initial release.
+
+0.1 - March 2008
+  [*] Updated BitlBee command list.
+
+0.2 - February 2012
+  [+] Added setting to enumerate commands to catch.
+  [+] Added setting to enumerate channels to ignore.
+
+
+
+( Legend : [+] added, [-] removed, [*] changed, [!] fixed )

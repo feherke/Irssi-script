@@ -1,0 +1,5 @@
+3. %9Flood protection%9
+
+%Umanualfloodprotectioncommandfloodprotection%U  3.1 Command flood protection
+%Umanualfloodprotectionctcpfloodprotection%U     3.2 CTCP flood protection
+%Umanualfloodprotectiondetectingfloods%U         3.3 Detecting floods

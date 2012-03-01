@@ -1,0 +1,10 @@
+List of signals irssi emits - see design.txt for more information about
+signals.
+
+%Usigcore%U             core
+%Usigirccore%U          IRC core
+%Usigircmodule%U        IRC modules
+%Usigfecommon%U         FE common
+%Usigfeirc%U            FE IRC
+%Usigtextfe%U           Text FE
+%Usigperl%U             Perl

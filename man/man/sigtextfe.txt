@@ -1,0 +1,6 @@
+%9Text FE%9
+-------
+gui-readline.c:
+ "%Ygui key pressed%N", int key
+gui-printtext.c:
+ "%Ybeep%N"

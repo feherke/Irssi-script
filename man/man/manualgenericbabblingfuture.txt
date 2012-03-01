@@ -1,0 +1,11 @@
+0.3 %9Future%9
+
+What about Irssi 1.0, what will it look like?
+
+I was thinking about the Linux kernel versioning and keeping Irssi 0.8 a stable
+version all the time while developing new features only to Irssi 0.9. After 0.9
+is finished, it will be called 0.10 or 1.0 depending if I think it's ready to
+be called 1.0.
+
+1.0's goal is that it has all the possible features anyone will ever need. If
+not build-in, then in scripts or loadable modules. Not very small goal :)

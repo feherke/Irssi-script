@@ -1,0 +1,50 @@
+%9IRC core%9
+--------
+* %9Provides signals%9:
+bans.c:
+ "%Yban type changed%N", char *bantype
+channels, nicklist:
+ "%Ychannel joined%N", CHANNEL_REC
+ "%Ychannel wholist%N", CHANNEL_REC
+ "%Ychannel sync%N", CHANNEL_REC
+ "%Ychannel topic changed%N", CHANNEL_REC
+ctcp.c:
+ "%Yctcp msg%N", SERVER_REC, char *args, char *nick, char *addr, char *target
+ "%Yctcp msg %N"<%Ycmd%N>, SERVER_REC, char *args, char *nick, char *addr, char *target
+ "%Ydefault ctcp msg%N", SERVER_REC, char *args, char *nick, char *addr, char *target
+ "%Yctcp reply%N", SERVER_REC, char *args, char *nick, char *addr, char *target
+ "%Yctcp reply %N"<%Ycmd%N>, SERVER_REC, char *args, char *nick, char *addr, char *target
+ "%Ydefault ctcp reply%N", SERVER_REC, char *args, char *nick, char *addr, char *target
+ "%Yctcp action%N", SERVER_REC, char *args, char *nick, char *addr, char *target
+irc-log.c:
+ "%Yawaylog show%N", LOG_REC, int away_msgs, int filepos
+irc-nicklist.c:
+ "%Yserver nick changed%N", SERVER_REC
+irc-servers.c:
+ "%Yevent connected%N", SERVER_REC
+irc.c:
+ "%Yserver event%N", SERVER_REC, char *data, char *sender_nick, char *sender_address
+ "%Yevent %N"<%Ycmd%N>, SERVER_REC, char *args, char *sender_nick, char *sender_address
+ "%Ydefault event%N", SERVER_REC, char *data, char *sender_nick, char *sender_address
+ "%Ywhois default event%N", SERVER_REC, char *args, char *sender_nick, char *sender_address
+ "%Yserver incoming%N", SERVER_REC, char *data
+(for perl parser..)
+ "%Yredir %N"<%Ycmd%N>, SERVER_REC, char *args, char *sender_nick, char *sender_address
+lag.c:
+ "%Yserver lag%N", SERVER_REC
+ "%Yserver lag disconnect%N", SERVER_REC
+massjoin.c:
+ "%Ymassjoin%N", CHANNEL_REC, GSList of NICK_RECs
+mode-lists.c:
+ "%Yban new%N", CHANNEL_REC, BAN_REC
+ "%Yban remove%N", CHANNEL_REC, BAN_REC, char *setby
+modes.c:
+ "%Ychannel mode changed%N", CHANNEL_REC, char *setby
+ "%Ynick mode changed%N", CHANNEL_REC, NICK_REC, char *setby, char *mode, char *type
+ "%Yuser mode changed%N", SERVER_REC, char *old
+ "%Yaway mode changed%N", SERVER_REC
+netsplit.c:
+ "%Ynetsplit server new%N", SERVER_REC, NETSPLIT_SERVER_REC
+ "%Ynetsplit server remove%N", SERVER_REC, NETSPLIT_SERVER_REC
+ "%Ynetsplit new%N", NETSPLIT_REC
+ "%Ynetsplit remove%N", NETSPLIT_REC
