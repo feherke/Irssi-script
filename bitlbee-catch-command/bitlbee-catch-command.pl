@@ -9,7 +9,7 @@ $VERSION='0.2';
   name=>'BitlBee-CatchCommand',
   description=>'Catch BitlBee commands sent accidentally to other channels.',
   license=>'Use it healthy.',
-  url=>'http://feherke.github.com/perl/irssi/bitlbee-catch-command.html',
+  url=>'http://feherke.github.io/perl/irssi/bitlbee-catch-command.html',
   changed=>'2012-02-22',
 );
 

@@ -9,7 +9,7 @@ $VERSION='0.2';
   name=>'Man',
   description=>'Brief Irssi script developer manual.',
   license=>'Use it healthy.',
-  url=>'http://feherke.github.com/perl/irssi/man.html',
+  url=>'http://feherke.github.io/perl/irssi/man.html',
   changed=>'2008-07-28'
 );
 

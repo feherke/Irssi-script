@@ -11,4 +11,4 @@ Here are some scripts I wrote.
 * **Man** - Brief Irssi script developer manual.
 * **OSD-C** - OSD display controlled with chained conditions.
 
-These scripts were intentionally kept short. For details see the [[http://feherke.github.com/perl/irssi/|Irssi section of my site]].
+These scripts were intentionally kept short. For details see the [[http://feherke.github.io/perl/irssi/|Irssi section of my site]].

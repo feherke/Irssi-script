@@ -11,7 +11,7 @@ $VERSION='0.1';
   name=>'OSD Chain',
   description=>'OSD display controlled with chained conditions.',
   license=>'Use it healthy.',
-  url=>'http://feherke.github.com/perl/irssi/osd-c.html',
+  url=>'http://feherke.github.io/perl/irssi/osd-c.html',
   changed=>'2008-08-13'
 );
 
